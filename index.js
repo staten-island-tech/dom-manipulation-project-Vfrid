@@ -3,8 +3,10 @@ const DOMSelectors ={
     // or I could use querySelector instead of getElementById, if I wanted to select the object by its ID i would put # in front of the id, if i want to select
 // an object by its class I would put a . in front of the name of the class, if i want to select all objects in the class I would use querySelectorAll
     form: document.querySelector("#form"),
-    first_name: document.querySelector(".first_name"),
-    first: document.querySelector(".ag-courses-item_title"),
+    first_name: document.querySelector("#first_name"),
+    fir: document.querySelector(".ag-courses-item_title"),
+    dob: document.querySelector("#dob_input"),
+    person_dob: document.querySelector(".ag-courses-item_date"),
 };
 console.log(DOMSelectors.heading);
 
@@ -13,10 +15,61 @@ function changetext(text){
     text.style.color = "blue"
 };
 console.log(DOMSelectors.form);
+
+// DOMSelectors.form.addEventListener("submit", function () {
+//     let first_name = DOMSelectors.first_name.value; // .value lets you get the values of an element, in this case something you typed in
+  
+//     console.log(first_name);
+  
+//     DOMSelectors.fir.insertAdjacentHTML(
+//       "beforeend",
+//       `
+//           <div class="ag-courses-item_title"> ${first_name} </div>
+//       `
+//     );
+//     let dobby = DOMSelectors.dob.value; // .value lets you get the values of an element, in this case something you typed in
+  
+//     console.log(dobby);
+  
+//     DOMSelectors.person_dob.insertAdjacentHTML(
+//       "beforeend",
+//       `
+//           <div class="ag-courses-item_date"> ${dobby} </div>
+//       `
+//     );
+//   });
+
 DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
-    console.log(DOMSelectors.first_name.value);
-    function(first){
-        first.textContent = DOMSelectors.first_name.value
-    }
-});
+    let first_name = DOMSelectors.first_name.value;
+    let dobby = DOMSelectors.dob.value;
+
+    console.log(first_name, dobby);
+
+    const container = document.createElement("div");
+    container.classList.add("container");
+
+    const box = document.createElement("div");
+    box.classList.add("box");
+
+    const item = document.createElement("div");
+    item.classList.add("item");
+
+    const item_link = document.createElement("div");
+    item_link.classList.add("item_link");
+
+    const item_bg = document.createElement("div");
+    item_bg.classList.add("item_bg");
+
+    const item_title = document.createElement("div");
+    item_title.classList.add("item_title");
+    
+    const name_label = document.createElement("p");
+    name_label.classList.add("name_label");
+
+    const item_date_box = document.createElement("div");
+    item_date_box.classList.add("item_date_box");
+
+    const item_date = document.createElement("span");
+    item_date.classList.add("item_date");
+})
