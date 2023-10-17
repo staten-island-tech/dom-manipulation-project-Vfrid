@@ -1,15 +1,44 @@
 h1 {
-    color:brown;
+    color:#121212;
     font-size: 40px;
 }
 .container {
   width: 1142px;
   margin: 0 auto;
 }
+.form_label{
+  font-size: 20px;
+  color: #121212;
+  font-weight:700;
+}
 
+.input_field{
+  background-color: #121212;
+  color:#fff;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 8px;
+  box-shadow: none;
+}
 
+.btn{
+  background-color:#121212;
+  color:#fff;
+  font-weight:700;
+  font-size: 20px;
+  border-radius: 8px;
+  box-shadow: none;
+}
+.delete_btn{
+  background-color:#fff;
+  color:#121212;
+  font-weight:700;
+  font-size: 20px;
+  border-radius: 8px;
+  box-shadow: none;
+}
 body {
-  background-color: rgb(139, 130, 130);
+  background-color: rgb(187, 185, 173);
 }
 .box {
   display: -webkit-box;
@@ -47,6 +76,11 @@ body {
   text-decoration: none;
   color: #FFF;
 }
+.item_link:hover,
+.item_link:hover .delete_btn {
+  background-color: #121212;
+  color:#FFF;
+}
 .item_link:hover .item_bg {
   -webkit-transform: scale(10);
   -ms-transform: scale(10);
@@ -54,20 +88,23 @@ body {
 }
 .item_title {
   min-height: 87px;
-  margin: 0 0 15px;
+  margin: 0 0 5px;
 
   overflow: hidden;
-
-  font-weight: bold;
-  font-size: 30px;
-  color: #FFF;
 
   z-index: 2;
   position: relative;
 }
+
+.name_title {
+  font-weight: bold;
+  font-size: 30px;
+  color: #FFF;
+}
 .name_label {
   font-size: 15px;
   font-weight:300;
+  color: #fff;
 }
 .item_date_box {
   font-size: 18px;
