@@ -36,6 +36,8 @@ h1 {
   font-size: 20px;
   border-radius: 8px;
   box-shadow: none;
+  z-index: 2;
+
 }
 body {
   background-color: rgb(187, 185, 173);
@@ -76,11 +78,7 @@ body {
   text-decoration: none;
   color: #FFF;
 }
-.item_link:hover,
-.item_link:hover .delete_btn {
-  background-color: #121212;
-  color:#FFF;
-}
+
 .item_link:hover .item_bg {
   -webkit-transform: scale(10);
   -ms-transform: scale(10);
@@ -92,7 +90,7 @@ body {
 
   overflow: hidden;
 
-  z-index: 2;
+  z-index: 3;
   position: relative;
 }
 
@@ -121,7 +119,7 @@ body {
   -o-transition: color .5s ease;
   transition: color .5s ease
 }
-.item_bg {
+/* .item_bg {
   height: 128px;
   width: 128px;
   background-color: #f9b234;
@@ -136,7 +134,7 @@ body {
   -webkit-transition: all .5s ease;
   -o-transition: all .5s ease;
   transition: all .5s ease;
-}
+} */
 .item:nth-child(2n) .item_bg {
   background-color: #3ecd5e;
 }
