@@ -4,64 +4,59 @@ const DOMSelectors ={
 // an object by its class I would put a . in front of the name of the class, if i want to select all objects in the class I would use querySelectorAll
     form: document.querySelector("#form"),
     first_name: document.querySelector("#first_name"),
-    fir: document.querySelector(".item_title"),
     dob: document.querySelector("#dob_input"),
-    person_dob: document.querySelector(".item_date"),
     container: document.querySelector(".container"),
+    delete_form: document.querySelector("#del_form")
 };
 console.log(DOMSelectors.form);
+function createcard(){
+    // const fir = DOMSelectors.first_name.value;
+    // const dobby = DOMSelectors.dob.value;
+    // console.log(fir, dobby);
+    // return `
+    // <div class="box">
+    //     <div class="item">
+    //       <div class="item_link">
+    //         <div class="item_bg"></div>
+    
+    //         <div class="item_title">
+    //           <p class="name_label"> First Name:</p>
+    //           <p class="name_title">${fir} </p>
+    //         </div>
+    
+    //         <div class="item_date_box">
+    //           DOB:
+    //           <span class="item_date"> ${dobby}
+    //           </span>
+    //         </div>
+            
+    //       </div>
+    //     </div>
+    //     <form action="" id="del_form" class="del_form_container">
+    //             <input type="submit" value="Delete" class="delete_btn"/>
+    //         </form>
+    //   </div>`
+    return `<div>
+    <p>
+    ${DOMSelectors.first_name.value}</p></div>`
+}
+
+
+
+const card = createcard();
 
 DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
-    let first_name = DOMSelectors.first_name.value; 
-  
-    console.log(first_name);
-    
+    console.log(DOMSelectors.first_name.value);
+
     DOMSelectors.container.insertAdjacentHTML(
-        "afterbegin",
-        `
-        <div class="box"> </div>
-        `
-        
-    )
-    DOMSelectors.box.insertAdjacentHTML(
-        "afterbegin",
-        `
-        <div class="item"> </div>
-        `
-        
-    )
-    DOMSelectors.item.insertAdjacentHTML(
-        "afterbegin",
-        `
-        <div class="item_link"> </div>
-        `
-        
-    )
-    DOMSelectors.item_link.insertAdjacentHTML(
-        "afterbegin",
-        `
-        <div class="item_bg"> </div>
-        `
-        
-    )
-    DOMSelectors.box.insertAdjacentHTML(
-      "beforeend",
-      `
-          <div class="item_title"> ${first_name} </div>
-      `
-    );
-    let dobby = DOMSelectors.dob.value; 
-  
-    console.log(dobby);
-  
-    DOMSelectors.box.insertAdjacentHTML(
-      "beforeend",
-      `
-          <div class="ag-courses-item_date"> ${dobby} </div>
-      `
-    );
+        "afterbegin", card
+    )    
   });
+
+// DOMSelectors.delete_form.addEventListener("click", function(event){
+//     event.currentTarget.parentNode.remove();
+// })
 
 // DOMSelectors.form.addEventListener("submit", function(event){
 //     event.preventDefault();
