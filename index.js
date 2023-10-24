@@ -10,49 +10,49 @@ const DOMSelectors ={
 };
 console.log(DOMSelectors.form);
 function createcard(){
-    // const fir = DOMSelectors.first_name.value;
-    // const dobby = DOMSelectors.dob.value;
-    // console.log(fir, dobby);
-    // return `
-    // <div class="box">
-    //     <div class="item">
-    //       <div class="item_link">
-    //         <div class="item_bg"></div>
+    const fir = DOMSelectors.first_name.value;
+    const dobby = DOMSelectors.dob.value;
+    console.log(fir, dobby);
+    return `<div class="box">
+        <div class="item">
+          <div class="item_link">
+            <div class="item_bg"></div>
     
-    //         <div class="item_title">
-    //           <p class="name_label"> First Name:</p>
-    //           <p class="name_title">${fir} </p>
-    //         </div>
+            <div class="item_title">
+              <p class="name_label"> First Name:</p>
+              <p class="name_title">${fir} </p>
+            </div>
     
-    //         <div class="item_date_box">
-    //           DOB:
-    //           <span class="item_date"> ${dobby}
-    //           </span>
-    //         </div>
+            <div class="item_date_box">
+              DOB:
+              <span class="item_date"> ${dobby}
+              </span>
+            </div>
             
-    //       </div>
-    //     </div>
-    //     <form action="" id="del_form" class="del_form_container">
-    //             <input type="submit" value="Delete" class="delete_btn"/>
-    //         </form>
-    //   </div>`
-    return `<div>
-    <p>
-    ${DOMSelectors.first_name.value}</p></div>`
+          </div>
+        </div>
+            <button class="delete_btn">Delete</button>
+      </div>`
+    
 }
-
-
-
-const card = createcard();
-
+function clearinput(){
+    DOMSelectors.first_name.value="";
+    DOMSelectors.dob.value="";
+}
 DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
-    console.log(DOMSelectors.first_name.value);
 
     DOMSelectors.container.insertAdjacentHTML(
-        "afterbegin", card
+        "afterbegin", createcard()
     )    
+    clearinput();
+    const delete_btn = document.querySelectorAll(".delete_btn")
+    delete_btn.forEach((form)=>form.addEventListener("click", function (x){
+        x.currentTarget.parentNode.remove();
+}))
   });
+
+
 
 // DOMSelectors.delete_form.addEventListener("click", function(event){
 //     event.currentTarget.parentNode.remove();
